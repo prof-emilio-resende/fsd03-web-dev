@@ -11,6 +11,7 @@ class Person {
     }
 
     set height(theHeight) {
+        console.log('setting height value...');
         this._height = theHeight;
     }
 
@@ -19,7 +20,12 @@ class Person {
     }
 
     set weight(theWeight) {
+        console.log('setting weight value...');
         this._weight = theWeight;
+    }
+
+    isValid() {
+        return this._height && this._weight;
     }
 
     toObject() {

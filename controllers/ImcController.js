@@ -8,4 +8,10 @@ class ImcController {
             .getTableData()
             .then(callback);
     }
+
+    calculate(person, callback) {
+        this.imcDriver
+            .calculate(person)
+            .then(callback);
+    }
 }

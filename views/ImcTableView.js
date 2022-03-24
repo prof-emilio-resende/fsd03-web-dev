@@ -5,10 +5,9 @@ class ImcTableView extends ViewComponent {
     }
 
     onLoad() {
-      this.imcController.loadTable((imcRangeObj) => {
-        this.state.range = imcRangeObj;
-        this.paint();
-      });
+      this.imcController.loadTable(imcRangeObj => 
+        this.setState({range: imcRangeObj})
+      );
     }
 
     render() {
