@@ -1,3 +1,6 @@
+import ImcTableView from "./views/ImcTableView.js";
+import ImcView from "./views/ImcView.js";
+
 const imcTableView = new ImcTableView();
 const imcView = new ImcView();
 

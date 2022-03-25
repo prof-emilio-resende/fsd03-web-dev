@@ -1,4 +1,4 @@
-class HttpUtil {
+export default class HttpUtil {
     get(hostname, url) {
         return fetch(`${hostname}${url}`)
     }

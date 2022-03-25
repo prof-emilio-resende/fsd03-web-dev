@@ -1,4 +1,4 @@
-class ViewComponent {
+export default class ViewComponent {
     constructor() {
         this.componentName = this.__proto__.constructor.name;
         console.log(`Inicializando um novo componente ${this.componentName}...`);
@@ -24,9 +24,11 @@ class ViewComponent {
                     console.log(self);
                     console.log(target);
                     self.setObserveReady(target);
-                    return;
+                    return true;
                 }
+                
                 console.log('target still invalid, skipping state update...');
+                return true;
             }
         });
     }

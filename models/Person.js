@@ -1,4 +1,4 @@
-class Person {
+export default class Person {
     constructor(theHeight, theWeight) {
         this._height = theHeight;
         this._weight = theWeight;
