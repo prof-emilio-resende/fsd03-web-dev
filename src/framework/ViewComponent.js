@@ -1,6 +1,6 @@
 export default class ViewComponent {
-    constructor() {
-        this.componentName = this.__proto__.constructor.name;
+    constructor(lookupName) {
+        this.componentName = lookupName;
         console.log(`Inicializando um novo componente ${this.componentName}...`);
         this.element = document.querySelector(this.componentName);
         this.state = {};

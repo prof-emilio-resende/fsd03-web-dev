@@ -4,6 +4,7 @@
   "description": "web imc calculator",
   "main": "src/index.js",
   "scripts": {
+    "start": "webpack serve --mode=development --progress --config webpack.config.js",
     "build-dev": "webpack --mode=development --progress --config webpack.config.js",
     "build": "webpack --mode=production --progress --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +26,7 @@
   "dependencies": {
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   }
 }

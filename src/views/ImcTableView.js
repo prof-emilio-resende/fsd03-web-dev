@@ -3,7 +3,7 @@ import ImcController from "../controllers/ImcController.js";
 
 export default class ImcTableView extends ViewComponent {
     constructor() {
-      super();
+      super("ImcTableView");
       this.imcController = new ImcController();
     }
 
