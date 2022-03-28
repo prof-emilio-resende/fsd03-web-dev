@@ -8,6 +8,7 @@ module.exports = (env, argv) => {
 
     const config = {
         entry: "./src/index.js",
+        target: ["web", "es5"],
         output: {
             filename: "dist.js",
             path: path.resolve(__dirname, "dist")
@@ -19,6 +20,14 @@ module.exports = (env, argv) => {
                     test: /\.s[ac]ss$/i,
                     use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
                 },
+                {
+                    test: /\.js$/i,
+                    include: [path.resolve(__dirname, "src")],
+                    use: {
+                        loader: 'babel-loader',
+                        options: {}
+                    }
+                }
             ]
         },
         optimization: {

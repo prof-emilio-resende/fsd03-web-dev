@@ -1,3 +1,5 @@
+import "whatwg-fetch";
+
 export default class HttpUtil {
     get(hostname, url) {
         return fetch(`${hostname}${url}`)

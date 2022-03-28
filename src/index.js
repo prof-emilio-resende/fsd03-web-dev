@@ -1,3 +1,6 @@
+import ProxyPollyfillBuilder from 'proxy-polyfill/src/proxy';
+window.Proxy = ProxyPollyfillBuilder();
+
 import "./index.scss";
 
 import ImcTableView from "./views/ImcTableView.js";
