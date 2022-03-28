@@ -1,3 +1,5 @@
+import "./index.css";
+
 import ImcTableView from "./views/ImcTableView.js";
 import ImcView from "./views/ImcView.js";
 

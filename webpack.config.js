@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
     let htmlPlugin = null;
@@ -10,9 +11,14 @@ module.exports = (env, argv) => {
             filename: "dist.js",
             path: path.resolve(__dirname, "dist")
         },
-        plugins: [],
+        plugins: [new MiniCssExtractPlugin()],
         module: {
-            rules: []
+            rules: [
+                {
+                    test: /\.css$/i,
+                    use: [MiniCssExtractPlugin.loader, 'css-loader']
+                }
+            ]
         },
         mode: argv.mode
     };
