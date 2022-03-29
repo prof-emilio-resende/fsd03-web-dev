@@ -1,13 +1,16 @@
-import ViewComponent from "../framework/ViewComponent.js";
+import React from "react";
+
+//import ViewComponent from "../framework/ViewComponent.js";
 import ImcController from "../controllers/ImcController.js";
 
-export default class ImcTableView extends ViewComponent {
+export default class ImcTableView extends React.Component {
     constructor() {
-      super("ImcTableView");
+      super();
+      this.state = {range: null};
       this.imcController = new ImcController();
     }
 
-    onLoad() {
+    componentDidMount() {
       this.imcController.loadTable(imcRangeObj => 
         this.setState({range: imcRangeObj})
       );
@@ -16,17 +19,17 @@ export default class ImcTableView extends ViewComponent {
     render() {
       if (!this.state.range) return '<table></table>';
 
-      return `<table>
-        ${
+      return (<table>
+        {
           Object.keys(this.state.range)
             .sort()
             .map(k => 
-              `<tr>
-                  <td>${k}</td>
-                  <td>${this.state.range[k]}</td>
-              </tr>`
-            ).join('')
+              <tr>
+                  <td>{k}</td>
+                  <td>{this.state.range[k]}</td>
+              </tr>
+            )
         }
-      </table>`
+      </table>);
     }
 }

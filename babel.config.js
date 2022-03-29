@@ -12,7 +12,8 @@ module.exports = {
                 safari: "11.1",
                 ie:  "11"
             }
-        }]
+        }],
+        "@babel/preset-react"
     ],
     "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-transform-arrow-functions", "@babel/plugin-transform-spread"]
 }

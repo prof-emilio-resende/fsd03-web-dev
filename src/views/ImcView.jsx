@@ -1,8 +1,10 @@
-import ViewComponent from "../framework/ViewComponent.js";
-import ImcController from "../controllers/ImcController.js";
-import Person from "../models/Person.js";
+import React from "react";
 
-export default class ImcView extends ViewComponent {
+//import ViewComponent from "../framework/ViewComponent.js";
+import ImcController from "../controllers/ImcController";
+import Person from "../models/Person";
+
+export default class ImcView extends React.Component {
     constructor() {
         super("ImcView");
         this.imcController = new ImcController();
@@ -12,7 +14,7 @@ export default class ImcView extends ViewComponent {
     render() {
         const person = this.state;
 
-        return `Seu IMC está <span>${person.imc}</span> : <strong>${person.imcDescription}</strong>`;
+        return (<>Seu IMC está <span>{person.imc}</span> : <strong>{person.imcDescription}</strong></>);
     }
 
     setObserveReady(person) {

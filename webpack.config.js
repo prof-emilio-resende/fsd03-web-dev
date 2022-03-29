@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
                     use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
                 },
                 {
-                    test: /\.js$/i,
+                    test: /\.(js|jsx)$/i,
                     include: [path.resolve(__dirname, "src")],
                     use: {
                         loader: 'babel-loader',

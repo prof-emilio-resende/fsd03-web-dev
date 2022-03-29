@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 export default class ViewComponent {
     constructor(lookupName) {
         this.componentName = lookupName;
@@ -42,7 +45,8 @@ export default class ViewComponent {
     }
 
     paint() {
-        this.element.innerHTML = this.render();
+        const el = React.createElement('div', { className: "react-container" }, this.render());
+        ReactDOM.render(el, this.element);
     }
 
     setState(state) {
